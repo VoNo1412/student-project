@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: password     # Mật khẩu cho user root
+      MYSQL_DATABASE: APIDB             # Tên database
+      MYSQL_USER: user                  # Tên user tùy chọn
+      MYSQL_PASSWORD: userpassword      # Mật khẩu user tùy chọn
+    ports:
+      - "3306:3306"                     # Kết nối MySQL qua cổng 3306
+    volumes:
+      - mysql-data:/var/lib/mysql       # Lưu trữ dữ liệu MySQL
+
+volumes:
+  mysql-data:
