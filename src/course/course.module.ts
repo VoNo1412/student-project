@@ -4,11 +4,11 @@ import { CourseController } from './course.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Course } from 'src/entity/course.entity';
 import { StudentModule } from 'src/student/student.module';
-import { StudentService } from 'src/student/student.service';
+import { Student } from 'src/entity/student.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Course])], // Tích hợp Entity
-  providers: [CourseService, StudentService],
+  imports: [TypeOrmModule.forFeature([Course, Student]), StudentModule], // Tích hợp Entity
+  providers: [CourseService],
   controllers: [CourseController]
 })
 export class CourseModule {}

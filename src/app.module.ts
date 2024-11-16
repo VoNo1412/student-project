@@ -14,7 +14,7 @@ import { Course } from './entity/course.entity';
       username: 'root',
       password: 'password', // Thay bằng mật khẩu của bạn
       database: 'APIDB',
-      // entities: [Student, Course], // Đưa vào danh sách các Entity
+      entities: [Student, Course], // Đưa vào danh sách các Entity
       synchronize: true, // Đồng bộ schema tự động (chỉ dùng cho phát triển)
     }),
     StudentModule,
